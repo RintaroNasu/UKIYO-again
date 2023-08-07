@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+    <head> 
+        <meta charset="utf-8">
+        <title>UKIYO-AGAIN</title> 
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body> 
+        <header>
+            <div class="top-title">UKIYOcreate</div>
+                <ul class="header-list">
+                    <li>BLOG</li>
+                    <li>ABOUT</li>
+                    <li>LINKS</li>
+                    <li>PROJECTS</li>
+                </ul>
+        </header>
+        <div class="image-container">
+            <img class="top-image" src="image.jpg" alt="">
+        </div>
+        <p class="top-sentence">A few words about this blog platform, Ghost, and how this<br>site was made</p>
+        <p class="sub-sentence">Why Ghost (& Figma) instead of Medium, WordPress or<br> other options?</p>
+        <p class="all-articles">All articles</p>
+        <div class="article-list">
+            <div>
+                <img id="image1" src="" alt="Image1">
+                <p class="title1"></p>
+            </div>
+            <div>
+                <img id="image2" src="" alt="Image2">
+                <p class="title2"></p>
+            </div>
+            <div>
+                <img id="image3" src="" alt="Image3">
+                <p class="title3"></p>
+            </div>
+            <div>
+                <img id="image4" src="" alt="Image4">
+                <p class="title4"></p>
+            </div>
+            <div>
+                <img id="image5" src="" alt="Image5">
+                <p class="title5"></p>
+            </div> 
+            <div>
+                <img id="image6" src="" alt="Image6">
+                <p class="title6"></p>
+            </div> 
+            <div>
+                <img id="image7" src="" alt="Image7">
+                <p class="title7"></p>
+            </div>
+            <div>
+                <img id="image8" src="" alt="Image8">
+                <p class="title8"></p>
+            </div>
+            <div>
+                <img id="image9" src="" alt="Image9">
+                <p class="title9"></p>
+            </div>
+            <div>
+                <img id="image10" src="" alt="Image10">
+                <p class="title10"></p>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <p class="footer-title">UKIYOcreate</p>
+                <p class="first-sentence">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Duis eu velit tempus erat egestas efficitur. In hac habitasse<br>
+                platea dictumst. Fusce a nunc eget ligula suscipit finibus.<br></p>
+                <p class="twitter"><span class="underline">Twitter</span><span class="underline">LinkedIn</span><span class="underline">RSS</span></p>
+                <p class="second-sentence">© 2012-2020 Nordic Rose Co.<br>All rights reserved. </p>
+            </div> 
+        </footer>
+    </body>
+</html>
+<script>
+    const apiURL = "https://ukiyo-test-blog.microcms.io/api/v1/articles";
+    const apiKey = "1CdoKFONr4t66inzJ9GNc8kFcCmpjeRfJmdo";
+    async function getArticles() {
+        try {
+            const response = await fetch(apiURL, {
+                method: "GET",
+                headers: {
+                    "X-MICROCMS-API-KEY": apiKey,
+                },
+            });
+            if (!response.ok) {
+                throw new Error("APIリクエストが失敗しました。");
+            }
+            const data = await response.json(); 
+            const articles = data.contents;
+            console.log(data);
+            console.log(articles);
+            for (let index = 0; index < articles.length; index++) {
+                const imageSrc = articles[index].eyecatch.url;
+                const element = document.getElementById(`image${index + 1}`);
+                element.src = imageSrc;
+                const title = articles[index].title;
+                // タイトル要素を生成して適切な親要素に追加
+                const titleElement = document.createElement("p");
+                titleElement.textContent = title;
+                const titleContainer = document.querySelector(`.title${index + 1}`);
+                titleContainer.appendChild(titleElement);
+                console.log(element);
+            }
+        } 
+        catch (error) {
+            console.error(error);
+        }
+    }
+    getArticles();
+</script>

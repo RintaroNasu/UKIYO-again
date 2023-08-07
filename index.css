@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+/* headerの要素 */
+header{
+    width: 100vw;
+    height: 134px;
+    display: flex;
+    justify-content: space-between; 
+    border-bottom: 1px solid rgb(225, 223, 223);
+}
+.top-title{
+    width: 20%;
+    height: 134px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.25em;
+}
+.header-list{
+    height: 134px;
+    display: flex;
+    align-items: center;
+    font-size: 1.25em;
+    margin-right: 30px;
+}
+.header-list li{
+    list-style:none;
+    margin-left: 25px;
+}
+ /* ------------------------------------------------------  */
+/* image */ 
+.image-container{
+    width: 50vw;
+    margin:60px auto 20px auto;
+}
+.top-image{
+    width: 100%;
+}
+ /* ------------------------------------------------------  */
+/* sentence */
+.top-sentence{
+    width: 59vw;
+    font-size: 3.375em;
+    margin: 0 auto  10px auto;
+    text-align: center;
+}
+.sub-sentence{
+    width: 41vw;
+    height: 100px;
+    font-size: 1.25em;
+    margin: 0 auto;
+    border-bottom: 3px solid black;
+    text-align: center;
+}
+.all-articles{
+    width: 16vw;
+    height: 53px;
+    font-size: 2.75em;
+    margin: 30px auto 0 auto;
+}
+ /* ------------------------------------------------------  */
+/* 記事の部分 */
+.article-list{
+    width: 50%;
+    margin-left: 27.5vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.article-list div img{
+    width: 80%;
+}
+.article-list div p{
+    width: 90%;
+    font-size: 1.175em;
+    text-align: center;
+    margin-top: 10px;
+}
+.article-list div{
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+ /* ------------------------------------------------------  */
+ /* footerの部分 */
+footer{
+    width: 100vw;
+    height: 464px;
+    background-color: black;
+    color: aliceblue;
+    padding-top: 40px;
+    margin-top: auto;
+}
+footer div{
+    width: 33vw;
+    margin: 0 auto;
+    text-align: center;
+}
+.footer-title{
+    margin: 0 auto;
+    width: 62%;
+    font-size: 32px;
+}
+.first-sentence{
+    margin: 30px auto 30px auto;
+}
+.twitter{
+    display: flex;
+    gap: 10%; 
+    width: 65%;
+    margin: 0 auto;
+    text-align: center; /* テキストを中央に配置 */
+}
+.underline{
+    border-bottom-style:solid;
+    border-color: rgb(246, 245, 243);
+    text-align: center;
+}
+.second-sentence{
+    margin-top: 40px;
+}
+/* --------------------------------------------------------- */
+/* モバイル版用 */
+@media (max-width:1410px){
+    .top-title{
+        width: 20%;
+        height: 134px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 2em;
+    }
+    .header-list{
+        height: 134px;
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+    }
+    .top-sentence{
+        font-size: 2.5em;
+        margin: 0 auto  10px auto;
+        text-align: center;
+    }
+    .sub-sentence{
+        width: 41vw;
+        height: 100px;
+        font-size: 1em;
+        margin: 0 auto;
+        border-bottom: 3px solid black;
+        text-align: center;
+    }
+    .all-articles{
+        width: 30vw;
+        height: 53px;
+        font-size: 2em;
+        margin: 30px auto 0 auto;
+        text-align: center;
+    }
+    .article-list div p{
+        width: 90%;
+        font-size: 1em;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+@media (max-width:600px){
+    .top-title{
+        width: 20%;
+        height: 134px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.3em;
+    }
+    .header-list{
+        height: 134px;
+        display: flex;
+        align-items: center;
+        font-size: 1.3em;
+    }
+    .top-sentence{
+        font-size: 1.5em;
+        margin: 0 auto  10px auto;
+        text-align: center;
+    }
+    .sub-sentence{
+        width: 41vw;
+        height: 100px;
+        font-size: 1em;
+        margin: 0 auto;
+        border-bottom: 3px solid black;
+        text-align: center;
+    }
+    .all-articles{
+        width: 30vw;
+        height: 53px;
+        font-size: 1.5em;
+        margin: 30px auto 0 auto;
+        text-align: center;
+    }
+    .article-list div p{
+        width: 90%;
+        font-size: 0.5em;
+        text-align: center;
+        margin-top: 10px;
+    }
+    footer{
+        width: 100vw;
+        height: 464px;
+        background-color: black;
+        color: aliceblue;
+        padding-top: 40px;
+        margin-top: auto;
+    }
+    footer div{
+        width: 33vw;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .footer-title{
+        margin: 0 auto;
+        width: 62%;
+        font-size: 32px;
+    }
+    .first-sentence{
+        margin: 30px auto 30px auto;
+        font-size: 10px;
+    }
+    .twitter{
+        display: flex;
+        gap: 10%; 
+        width: 65%;
+        margin: 0 auto;
+        text-align: center; /* テキストを中央に配置 */
+    }
+    .underline{
+        border-bottom-style:solid;
+        border-color: rgb(246, 245, 243);
+        text-align: center;
+    }
+    .second-sentence{
+        margin-top: 40px;
+    }
+}
+
+
